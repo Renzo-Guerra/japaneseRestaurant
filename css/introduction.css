@@ -1,0 +1,100 @@
+:root{
+  --line-height: 1.8rem;
+  --line-height-desktop: 1.8rem;
+  --line-height-title: 2.8rem;
+  --line-height-title-desktop: 2.8rem;
+  --col-box-shadow: rgb(8, 8, 8);
+}
+
+.introduction{
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  background: rgba(0, 0, 0, 0.6);  
+  background-image: url(/assets/background/bgPresentation.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  height: 300vh;
+  color: var(--primary);
+  padding-block: 5rem;
+}
+
+.introduction__group{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.introduction__group.center{
+  text-align: center;
+}
+.introduction__group.center p{
+  width: 100%;
+}
+
+.introduction__group h3{
+  line-height: calc( var(--line-height-title) + .5rem);
+  font-size: var(--line-height-title);
+  margin-bottom: 1.3rem;
+}
+
+.introduction__group p{
+  width: 80%;
+  font-size: 1.3rem
+}
+
+.introduction__contentContainer{
+  display: grid;
+  overflow: hidden;
+  padding: 1rem;
+  gap: 8rem;
+  /* border: solid 1px red; */
+  line-height: var(--line-height);
+}
+
+.introduction__contentContainer img{
+  width: 100%;
+  height: 13rem;
+  object-fit: cover;
+  box-shadow: 0 0 10px 5px var(--col-box-shadow);
+  border-radius: .2rem;
+  scale: .98;
+  transition: scale .3s ease-in;
+}
+
+.introduction__contentContainer img:hover{
+  scale: 1;
+}
+
+.introduction__contentContainer img.right{
+  transform: translateX(25vw);
+}
+
+.introduction__contentContainer img.left{
+  transform: translateX(-25vw);
+}
+
+@media screen and (min-width: 600px){
+  .introduction{
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  }
+  
+  .introduction__contentContainer img{
+    width: 100%;
+    height: 26rem;
+  }
+  
+  .introduction__group h3{
+    font-size: var(--line-height-title-desktop);
+    line-height: calc(var(--line-height-title-desktop + .5rem));
+  }
+  
+  .introduction__group p{
+    width: 100%;
+    font-size: var(--line-height-desktop);
+    line-height: calc(var(--line-height-desktop + .5rem));
+  }
+  
+
+}

@@ -1,0 +1,66 @@
+section.hero{
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  background-image: url(/assets/background/bgHeroDesktop.jpg);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: var(--primary);
+  position: relative;
+}
+
+.hero__textContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  font-style: italic;
+  padding: calc(1rem + 5%);
+}
+
+.hero__textContainer h1{
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  margin-bottom: 2rem;
+  animation: appearLeftToRight 400ms ease-out forwards;
+  font-weight: var(--fw-500);
+}
+
+.hero__textContainer h2{
+  font-size: clamp(1.75rem, calc(3vw + 1rem), 2.75rem);
+  width: min(90%, 40rem);
+  font-weight: var(--fw-300);
+  opacity: 0;
+  animation: appearLeftToRight 400ms ease-out forwards;
+  animation-delay: 200ms;
+}
+
+.hero .fadeBottom a{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+  clip-path: polygon(0 55%, 30% 55%, 30% 0, 70% 0, 70% 55%, 100% 55%, 50% 100%);
+}
+
+.hero .fadeBottom a:focus-visible{
+  outline: 2px auto;
+  
+}
+
+.hero .fadeBottom i{
+  animation: upAndDown ease-in-out 5s infinite;
+}
+
+@media screen and (min-width: 600px){
+  section.hero{
+    background-image: url(/assets/background/bgHeroMobile.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+}
